@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simon the Drummer</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Drum Sounds -->
+    <audio id="d_red">
+        <source src="Assets/Sounds/drum_low.wav">
+    </audio>
+    <audio id="d_blue">
+        <source src="Assets/Sounds/drum_don.wav">
+    </audio>
+    <audio id="d_green">
+        <source src="Assets/Sounds/drum_tak.wav">
+    </audio>
+    <audio id="d_yellow">
+        <source src="Assets/Sounds/drum_rim.wav">
+    </audio>
+    <audio id="d_good">
+        <source src="Assets/Sounds/hihat.wav">
+    </audio>
+    <audio id="d_bad">
+        <source src="Assets/Sounds/drum_solo.mp3">
+    </audio>
+</head>
+
+<body onload="displayScore()">
+    <div class="game" style="text-align: center;">
+        <h1><strong><em>Simon the Drummer</em></strong></h1>
+        <h3><em>Help Simon with his drum rehershal!<br>See how long you can keep up with his beats!</em></h3>
+        <h3 id="hiscore">Your Best Score: 0</h3>
+        <div class="light">
+            <div id="counter" style="position: relative; text-align: center;">
+                <img src="Assets/drummer_text.png"style="width: 400px; height: 130px;">
+                <div class="score">
+                    <h2 id="score">Click here to start!</p>
+                </div>
+            </div>
+            <img id="simon" src="Assets/drummer_idle.png" style="height: 340px;">
+        </div>
+        <div class="buttons">
+            <div class="b" id="b_red"></div>
+            <div class="b" id="b_blue"></div>
+            <div class="b" id="b_green"></div>
+            <div class="b" id="b_yellow"></div>
+        </div><br>
+    </div>
+    <script src="script.js"></script>
+    <footer>
+    <p>Copyright &copy; 2025.<br>Website best viewed on PC/laptop.</p>
+    </footer>
+</body>
+</html>
