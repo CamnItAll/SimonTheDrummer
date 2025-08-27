@@ -22,6 +22,14 @@ const bGrn = document.querySelector("#b_green");
 const bYlw = document.querySelector("#b_yellow");
 const simon = document.querySelector("#simon");
 
+// Drum Sounds
+let a_drum_1 = new Audio('https://github.com/CamnItAll/SimonTheDrummer/raw/refs/heads/main/Assets/Sounds/drum_1.mp3');
+let a_drum_2 = new Audio('https://github.com/CamnItAll/SimonTheDrummer/raw/refs/heads/main/Assets/Sounds/drum_2.mp3');
+let a_drum_3 = new Audio('https://github.com/CamnItAll/SimonTheDrummer/raw/refs/heads/main/Assets/Sounds/drum_3.mp3');
+let a_drum_4 = new Audio('https://github.com/CamnItAll/SimonTheDrummer/raw/refs/heads/main/Assets/Sounds/drum_4.mp3');
+let a_drum_w = new Audio('https://github.com/CamnItAll/SimonTheDrummer/raw/refs/heads/main/Assets/Sounds/drum_next.mp3');
+let a_drum_l = new Audio('https://github.com/CamnItAll/SimonTheDrummer/raw/refs/heads/main/Assets/Sounds/drum_solo.mp3')
+
 //-----------------------------------------------------------------------------------------//
 // Animations
 // Step 1: Set up the frames
@@ -160,9 +168,7 @@ function play() {
     points.innerHTML = 0;
     okay = true;
 
-    let audio = document.getElementById("d_good");
-    audio.volume = 0.4;
-    audio.play();
+    a_drum_w.play();
     beatNext();
 
     // Start Game Loop
@@ -203,9 +209,7 @@ function gameTurn() {
 // Button Flashes
 function one() {
     if (sound) {
-        let audio = document.getElementById("d_red");
-        audio.volume = 0.4;
-        audio.cloneNode(true).play();
+        a_drum_1.cloneNode(true).play();
     }
     sound = true;
     bRed.style.backgroundColor = "white";
@@ -213,9 +217,7 @@ function one() {
 }
 function two() {
     if (sound) {
-        let audio = document.getElementById("d_blue");
-        audio.volume = 0.4;
-        audio.cloneNode(true).play();
+        a_drum_2.cloneNode(true).play();
     }
     sound = true;
     bBlu.style.backgroundColor = "white";
@@ -223,9 +225,7 @@ function two() {
 }
 function tre() {
     if (sound) {
-        let audio = document.getElementById("d_green");
-        audio.volume = 0.4;
-        audio.cloneNode(true).play();
+        a_drum_3.cloneNode(true).play();
     }
     sound = true;
     bGrn.style.backgroundColor = "white";
@@ -233,9 +233,7 @@ function tre() {
 }
 function fur() {
     if (sound) {
-        let audio = document.getElementById("d_yellow");
-        audio.volume = 0.4;
-        audio.cloneNode(true).play();
+        a_drum_4.cloneNode(true).play();
     }
     sound = true;
     bYlw.style.backgroundColor = "white";
@@ -310,8 +308,7 @@ function compare() {
         points.innerHTML = "Game Over!";
         sound = false;
         anim = false;
-        let audio = document.getElementById("d_bad");
-        audio.play();
+        a_drum_l.play();
         beatLoss();
         setTimeout(() => {
             // Reset the drummer and the bubble
@@ -326,9 +323,7 @@ function compare() {
     if (turn == playerTrack.length && okay && !win) {
         turn++;
         sound = false;
-        let audio = document.getElementById("d_good");
-        audio.volume = 0.4;
-        audio.play();
+        a_drum_w.play();
 
         // If the player makes the high score, do something about it.
         var score = localStorage.getItem("hiscore");
@@ -353,10 +348,9 @@ function compare() {
 
 // For unused win condition
 function youWinga() {
-    let audio = document.getElementById("d_good");
-    audio.volume = 0.4;
-    audio.play();
+    a_drum_w.play();
     points.innerHTML = "end";
     on = false;
     win = true;
+
 }
